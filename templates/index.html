@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
-    <h1>Welcome to the Home Page!</h1>
-    <p>My name is {{first_name}}</p>
-    <p>{{stuff|safe}}</p>
-    <p>Fav Managers:</p>
-    {% for names in footy_managers %}
-    {{names}}
-    <br>
-    {% endfor %}
-    <br>
-    {{ footy_managers.2|upper|reverse + " Man UTD"}}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+    </head>
+    <body>
+        <h1>Welcome to the Home Page!</h1>
+        <p>My name is {{first_name}}</p>
+        <p>{{stuff|safe}}</p>
+        <p>Fav Managers:</p>
+        {% for names in footy_managers %}
+        {{names}}
+        <br>
+        {% endfor %}
+        <br>
+        {{ footy_managers.2|upper|reverse + " Man UTD"}}
+    </body>
+    </html>
+{% endblock %}
